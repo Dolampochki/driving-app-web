@@ -1,0 +1,53 @@
+<form name="newStudentForm" class="form-horizontal" ng-submit="newStudentFormCtrl.addStudent(newStudentForm, newStudentFormCtrl.student)">
+  <div class="form-group form-group-lg">
+    <label class="col-sm-2 control-label" for="studentFirstName">First Name</label>
+    <div class="col-sm-4">
+      <input class="form-control" type="text" id="studentFirstName" placeholder="Enter First Name" ng-model="newStudentFormCtrl.student.firstName" required>
+    </div>
+    <label class="col-sm-2 control-label" for="studentType">Automat</label>
+    <div class="col-sm-1">
+      <input type="checkbox" id="studentType" ng-model="newStudentFormCtrl.student.automat">
+    </div>
+    <label class="col-sm-2 control-label" for="studentTheory">Theory</label>
+    <div class="col-sm-1">
+      <input type="checkbox" id="studentTheory" ng-model="newStudentFormCtrl.student.theory">
+    </div>
+  </div>
+  <div class="form-group form-group-lg">
+    <label class="col-sm-2 control-label" for="studentLastName">Last Name</label>
+    <div class="col-sm-4">
+      <input class="form-control" type="text" id="studentLastName" placeholder="Enter Last Name" ng-model="newStudentFormCtrl.student.lastName" required>
+    </div>
+    <label class="col-sm-2 control-label" for="studentCost">Lessons Cost</label>
+    <div class="col-sm-4">
+      <input class="form-control" type="number" id="studentCost" placeholder="Enter price in NIS" ng-model="newStudentFormCtrl.student.cost" required>
+    </div>
+  </div>
+  <div class="form-group form-group-lg">
+    <label class="col-sm-2 control-label" for="studentId">ID Number</label>
+    <div class="col-sm-4">
+      <input class="form-control" type="number" id="studentId" placeholder="Enter ID Number" ng-model="newStudentFormCtrl.student.id" required>
+    </div>
+    <label class="col-sm-2 control-label" for="studentLessonsDone">Lessons Done</label>
+    <div class="col-sm-4">
+      <input class="form-control" type="number" id="studentLessonsDone" placeholder="How many lessons done before" ng-model="newStudentFormCtrl.student.lessonsStart">
+    </div>
+  </div>
+  <div class="form-group form-group-lg">
+    <label class="col-sm-2 control-label" for="studentPhone">Phone</label>
+    <div class="col-sm-4">
+      <input class="form-control" type="phone" id="studentPhone" placeholder="Enter Phone" ng-model="newStudentFormCtrl.student.phone">
+    </div>
+    <label class="col-sm-2 control-label" for="studentBirthdate">Birthdate</label>
+    <div class="col-sm-4">
+      <input class="form-control" type="date" id="studentBirthdate" ng-model="newStudentFormCtrl.student.birthDate">
+      <input class="form-control" type="hidden" id="studentLessons" ng-model="newStudentFormCtrl.student.lessons">
+    </div>
+  </div>
+  <div class="form-group form-group-lg text-right">
+    <div class="col-sm-12">
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </div>
+</form>
+<hr />

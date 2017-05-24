@@ -1,0 +1,23 @@
+<hr />
+<div class="row">
+  <div class="col-xs-12 col-md-12"><h1>Students</h1></div>
+</div>
+<div class="row">
+  <div class="col-xs-6 col-md-1">Search:</div>
+  <div class="col-xs-6 col-md-2">
+    <input ng-model="searchText"></label>
+  </div>
+  <div class="col-xs-6 col-md-1">Sort By</div>
+  <div class="col-xs-6 col-md-2">
+    <select class="form-control" ng-model="sortBy">
+        <option value="lastName" selected="selected">Name</option>
+        <option value="birthDate">Age</option>
+        <option value="automat">Type</option>
+        <option value="theory">Theory</option>
+    </select>
+  </div>
+  <div class="col-xs-12 col-md-6 text-right">
+    <button type="button" class="btn btn-primary btn-lg active" ng-click="studentListCtrl.showForm = !studentListCtrl.showForm">{{studentListCtrl.showForm ? "Close" : "Add Student"}}</button>
+  </div>
+</div>
+<hr />

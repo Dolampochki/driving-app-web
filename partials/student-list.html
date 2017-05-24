@@ -1,0 +1,34 @@
+<ul class="list-unstyled">
+  <li ng-repeat="student in studentListCtrl.students | filter:searchText | orderBy: sortBy">
+    <div class="row">
+      <div class="col-xs-12 col-md-12">
+        <h2>{{student.lastName + ' ' + student.firstName}}</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-md-4">
+        <div class="row">
+          <div class="col-xs-4 col-md-4">ID:</div><div class="col-xs-8 col-md-8">{{student.id}}</div>
+          <div class="col-xs-4 col-md-4">Phone:</div><div class="col-xs-8 col-md-8">{{student.phone}}</div>
+          <div class="col-xs-4 col-md-4">BirthDate:</div><div class="col-xs-8 col-md-8">{{student.birthDate | date:'MM/dd/yyyy'}}</div>
+          <div class="col-xs-4 col-md-4">Type:</div><div class="col-xs-8 col-md-8">{{student.automat &&  "Automat" || "Manual"}}</div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-4">
+        <div class="row">
+          <div class="col-xs-4 col-md-4">Theory:</div><div class="col-xs-8 col-md-8">{{student.automat &&  "Yes" || "No"}}</div>
+          <div class="col-xs-4 col-md-4">Cost:</div><div class="col-xs-8 col-md-8">{{student.cost}}</div>
+          <div class="col-xs-4 col-md-4">Lessons:</div><div class="col-xs-8 col-md-8">{{studentListCtrl.getTotal(student).totalLessons}}</div>
+          <div class="col-xs-4 col-md-4">Debt:</div><div class="col-xs-8 col-md-8"><strong ng-class="{'text-success': studentListCtrl.getTotal(student).totalPaid <=0, 'text-danger': studentListCtrl.getTotal(student).totalPaid >0}">{{studentListCtrl.getTotal(student).totalPaid}}</strong></div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-4 text-right">
+        <button type="button" class="btn btn-lg active" ng-click="hideShow=(hideShow ? false : true)">{{hideShow ? "Hide" : "Show Lessons"}}</button>
+      </div>
+    </div>
+
+    <br />
+    <lessons-list ng-if="hideShow"></lessons-list>
+    <hr />
+  </li>
+</ul>

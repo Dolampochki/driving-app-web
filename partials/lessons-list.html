@@ -1,0 +1,43 @@
+<table class="table">
+  <tr>
+    <th>Date</th>
+    <th>Time</th>
+    <th>Lessons Count</th>
+    <th>Paid</th>
+  </tr>
+  <tr ng-repeat="lesson in student.lessons | orderBy: 'lessonDate'">
+    <td>{{lesson.lessonDate | date:'MM/dd/yyyy'}}</td>
+    <td>{{lesson.lessonTime | date:'HH:mm'}}</td>
+    <td>{{lesson.lessonCount}}</td>
+    <td>{{lesson.lessonPaid}}</td>
+  </tr>
+</table>
+<!--<new-lesson-form></new-lesson-form>-->
+<form name="newLessonForm" class="form-horizontal" ng-submit="lessonsListCtrl.addLesson(student, lessonsListCtrl.lesson)">
+    <table class="table" ng-show="lessonsListCtrl.lesson.lessonDate">
+      <tr>
+        <td>{{lessonsListCtrl.lesson.lessonDate | date:'MM/dd/yyyy'}}</td>
+        <td>{{lessonsListCtrl.lesson.lessonTime | date:'HH:mm'}}</td>
+        <td>{{lessonsListCtrl.lesson.lessonCount}}</td>
+        <td>{{lessonsListCtrl.lesson.lessonPaid}}</td>
+      </tr>
+    </table>
+    <hr />
+    <div class="form-group form-group-lg">
+      <div class="col-md-3">
+        <input class="form-control" type="date" id="lessonDate" placeholder="Enter Date" ng-model="lessonsListCtrl.lesson.lessonDate" required="">
+      </div>
+      <div class="col-sm-2">
+        <input class="form-control" type="time" id="lessonTime" placeholder="Enter Time" ng-model="lessonsListCtrl.lesson.lessonTime" required="">
+      </div>
+      <div class="col-sm-3">
+        <input class="form-control" type="number" id="lessonCount" placeholder="Lessons Count" ng-model="lessonsListCtrl.lesson.lessonCount" required="">
+      </div>
+      <div class="col-sm-2">
+        <input class="form-control" type="number" id="lessonPaid" placeholder="Paid Sum" ng-model="lessonsListCtrl.lesson.lessonPaid" required="">
+      </div>
+      <div class="col-sm-2">
+        <button type="submit" class="btn btn-primary active">Add Lesson</button>
+      </div>
+    </div>
+</form>

@@ -1,0 +1,22 @@
+<form name="newLessonForm" class="form-horizontal" ng-submit="newLessonFormCtrl.addLesson(student.id, newLessonFormCtrl.lesson)">
+{{newLessonFormCtrl.id + 'fff'}}
+    <table class="table" ng-show="newLessonFormCtrl.lesson.lessonDate">
+      <tr>
+        <td>{{newLessonFormCtrl.lesson.lessonDate | limitTo:10}}</td>
+        <td>{{newLessonFormCtrl.lesson.lessonTime}}</td>
+        <td>{{newLessonFormCtrl.lesson.lessonCount}}</td>
+        <td>{{newLessonFormCtrl.lesson.lessonPaid}}</td>
+      </tr>
+    </table>
+
+    <input class="form-control" type="date" id="lessonDate" placeholder="Enter Date" ng-model="newLessonFormCtrl.lesson.lessonDate" >
+
+    <input class="form-control" type="time" id="lessonTime" placeholder="Enter Time" ng-model="newLessonFormCtrl.lesson.lessonTime" >
+
+    <input class="form-control" type="number" id="lessonCount" placeholder="Lessons Count" ng-model="newLessonFormCtrl.lesson.lessonCount" >
+
+    <input class="form-control" type="number" id="lessonPaid" placeholder="Paid Sum" ng-model="newLessonFormCtrl.lesson.lessonPaid" >
+    <br />
+    <button type="submit" class="btn btn-primary">Add Lesson</button>
+
+</form>
